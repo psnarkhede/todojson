@@ -1,0 +1,39 @@
+.header{
+    display:flex;
+    align-items: center;
+    margin: auto;
+    width:500px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.input{
+    border:2px solid black;
+    border-radius: 10px;
+    padding-left: 10px;
+    height:40px;
+    font-size: 18px;
+    width:335px;
+}
+
+.add{
+    font-size: 24px;
+    padding:7px 12px 7px 12px;
+    margin-left: 10px;
+    border:2px solid black;
+    border-radius: 3px;
+}
+
+.pageno{
+    display:flex;
+    align-items: center;
+    margin: auto;
+    width:300px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn1, .btn2, .btn3{
+    margin-left: 5px;
+}
+

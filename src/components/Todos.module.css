@@ -1,0 +1,37 @@
+.checked{
+    text-decoration: line-through;
+    color:silver;
+}
+
+.tododiv{
+    display:flex;
+    border:2px solid black;
+    border-radius: 10px;
+    width:400px;
+    margin: auto;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.check{
+    width:18px;
+    height:18px;
+    margin-left: 10px;
+}
+
+.text{
+    width:280px;
+    margin-left: 10px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.delete{
+    padding:5px 10px 5px 10px;
+    border:1px solid crimson;
+    background-color: crimson;
+    color:white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
