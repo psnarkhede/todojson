@@ -6,7 +6,7 @@ const Todoitem = (props) => {
   return (
     props.data.map((el) => (
         <div key={el.id}>
-            <Todos data={el}/>
+            <Todos data={el} deleteinfo={props.deleteinfo}/>
         </div>
     ))
 

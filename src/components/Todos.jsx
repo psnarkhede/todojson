@@ -18,7 +18,7 @@ const Todos = (props) => {
         </div>
 
         <div className={Styles.btn}>
-          <button className={Styles.delete} >Delete</button>
+          <button className={Styles.delete} onClick={() => (props.deleteinfo(props.data.id))} >Delete</button>
         </div>
         </div>
   );

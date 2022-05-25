@@ -4,8 +4,8 @@ import Styles from "./Todolist.module.css"
 
 
 const Todolist = () => {
+  const [page, setPage] = React.useState(1);
   const [input, setInput] = React.useState([]);
-
   const [todo, setTodo] = React.useState("");
 
   const saveinfo = () => {
@@ -25,12 +25,27 @@ const Todolist = () => {
   }
   };
 
+  const deleteinfo = (index) => {
+    fetch(`http://localhost:1111/todo/${index}`,{
+      method:"DELETE",
+    }).then((res) => (res.json()))
+    .then((res) => (
+      fetch(`http://localhost:1111/todo?_page=${page}&_limit=4`)
+        .then((res) => res.json())
+        .then((res) => {
+          setInput(res);
+        })
+    ))
+  }
+
   const getdata = (val) => {
+    setPage(val);
       fetch(`http://localhost:1111/todo?_page=${val}&_limit=4`)
         .then((res) => res.json())
         .then((res) => {
           setInput(res);
         });
+        
   }
 
   useEffect(() => {
@@ -48,7 +63,7 @@ const Todolist = () => {
 
       <button className={Styles.add} onClick={() => (saveinfo())}>+</button>
       </div>
-      <Todoitem data={input}/>
+      <Todoitem data={input} deleteinfo={deleteinfo}/>
 
       <div className={Styles.pageno}>
           <p className={Styles.page}>Pages:</p> 
